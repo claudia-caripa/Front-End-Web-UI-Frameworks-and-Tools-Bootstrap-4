@@ -77,6 +77,83 @@
         </div>
     </div>
 
+    <!-- Modal for Reservation -->
+    <div id="reservationModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Reserve a Table</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button><!--This button is the "X" that allows to close the modal-->
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-row">
+                            <div class="form-group row">
+                                <label for="guests" class="col-12 col-md-4 col-form-label">Number of Guests</label>
+                                <div class="col-12 col-md-8">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="one_guest_radio" value="one" checked>
+                                        <label class="form-check-label" for="one_guest_radio">1</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="two_guest_radio" value="two">
+                                       <label class="form-check-label" for="two_guest_radio">2</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="three_guest_radio" value="three">
+                                       <label class="form-check-label" for="three_guest_radio">3</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="four_guest_radio" value="four">
+                                       <label class="form-check-label" for="four_guest_radio">4</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="five_guest_radio" value="six">
+                                       <label class="form-check-label" for="six_guest_radio">5</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-12 col-md-4">Section</label>
+                                <div class="col-12 col-md-8">
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-success active">
+                                          <input type="radio" name="section" id="nonsmoking" autocomplete="off" checked> Non-Smoking
+                                        </label>
+                                        <label class="btn btn-danger">
+                                          <input type="radio" name="section" id="smoking" autocomplete="off"> Smoking
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-12 col-md-4 col-form-label">Date and Time</label>
+                                <div class="col-12 col-md-4">
+                                    <input type="text" class="form-control" id="date" name="date"
+                                    placeholder="Date">
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <input type="text" class="form-control" id="time" name="time"
+                                    placeholder="Time">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group row">
+                                <div class="col">
+                                    <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary btn-sm ml-1">Reserve</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -89,10 +166,7 @@
                 </div>
                 <div class="col-12 mt-5 mt-sm-0 col-sm-3 text-center align-self-center">
                     <a role="button" class="btn btn-block nav-link btn-warning"
-                    data-toggle="tooltip" data-html="true" 
-                    title="Or Call us at <br><strong>+852 12345678</strong>" 
-                    data-placement="bottom"
-                    href="#reservation">Reserve table</a>
+                    data-toggle="modal" data-target="#reservationModal">Reserve table</a>
                 </div>
             </div>
         </div>
@@ -290,11 +364,6 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script> 
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script> <!--JavaScript for tooltip-->
 </body>
 
 </html>
