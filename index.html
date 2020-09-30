@@ -30,7 +30,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginLink">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span><!--This span is for the LOGIN link that triggers the modal-->
@@ -165,8 +165,7 @@
                     <img src="img/logo.png" alt="logo" class="img-fluid">
                 </div>
                 <div class="col-12 mt-5 mt-sm-0 col-sm-3 text-center align-self-center">
-                    <a role="button" class="btn btn-block nav-link btn-warning"
-                    data-toggle="modal" data-target="#reservationModal">Reserve table</a>
+                    <a role="button" class="btn btn-block nav-link btn-warning" id="reserveButton">Reserve table</a>
                 </div>
             </div>
         </div>
@@ -372,6 +371,7 @@
     <!--JavaScript code for the Carousel Button-->
     <script>
         $(document).ready(function(){
+            //JavaScript to pause and play carousel
             $('#mycarousel').carousel({ interval: 2000 });
             $('#carouselButton').click(function(){
                 if ($('#carouselButton').children('span').hasClass('fa-pause')){
@@ -385,6 +385,15 @@
                     $('#carouselButton').children('span').addClass('fa-pause');
                 }
  
+            });
+
+            //JavaScript using the modal methods to toggle the showing and hiding of the modals
+            $('#reserveButton').click(function(){
+                $('#reservationModal').modal('toggle');
+            });
+
+            $('#loginLink').click(function(){
+                $('#loginModal').modal('toggle');
             });
         });
     </script>
